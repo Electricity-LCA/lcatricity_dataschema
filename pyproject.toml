@@ -1,0 +1,14 @@
+[project]
+name = "lcatricity_dataschema"
+version = "0.0.1"
+authors = [
+  { name="LCAtricity", email="author@example.com" },
+]
+description = "The Object Relational Model for the data storage layer of LCAtricity"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]

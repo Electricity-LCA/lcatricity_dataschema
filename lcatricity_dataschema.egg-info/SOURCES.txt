@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+lcatricity_dataschema/__init__.py
+lcatricity_dataschema/base.py
+lcatricity_dataschema.egg-info/PKG-INFO
+lcatricity_dataschema.egg-info/SOURCES.txt
+lcatricity_dataschema.egg-info/dependency_links.txt
+lcatricity_dataschema.egg-info/top_level.txt
