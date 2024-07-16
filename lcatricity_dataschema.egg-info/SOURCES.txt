@@ -1,3 +1,4 @@
+LICENSE
 README.md
 pyproject.toml
 lcatricity_dataschema/__init__.py
