@@ -13,12 +13,12 @@ class ImpactCategories(sql_alchemy_base):
 
 class ElectricityGenerationTypes(sql_alchemy_base):
     __tablename__ = 'ElectricityGenerationTypes'
-    Id = sqla.Column(sqla.Integer,primary_key=True, autoincrement=True, nullable=True)
+    Id = sqla.Column(sqla.Integer, primary_key=True, autoincrement=True, nullable=True)
     Name = sqla.Column(sqla.String(50))
 
 class ElectricityGenerationTypesMapping(sql_alchemy_base):
     __tablename__ = 'ElectricityGenerationTypesMapping'
-    Id = sqla.Column(sqla.Integer,primary_key=True, autoincrement=True, nullable=True)
+    Id = sqla.Column(sqla.Integer, primary_key=True, autoincrement=True, nullable=True)
     DataSourceName = sqla.Column(sqla.String(50))
     ElectricityGenerationTypeId = sqla.Column(sqla.Integer)
     ExternalName = sqla.Column(sqla.String(100))
@@ -51,6 +51,7 @@ class Regions(sql_alchemy_base):
     Code = sqla.Column(sqla.VARCHAR(36))
     Type = sqla.Column(sqla.VARCHAR(36))  # Currently `Country`
     Description = sqla.Column(sqla.VARCHAR(150))
+    EntsoeDataAvailable = sqla.Column(sqla.Boolean)
     __table_args__ = (
         sqla.UniqueConstraint('Code', name='UX_Regions'),
     )
@@ -58,7 +59,7 @@ class Regions(sql_alchemy_base):
 
 class ElectricityGeneration(sql_alchemy_base):
     __tablename__ = 'ElectricityGeneration'
-    Id = sqla.Column(sqla.Integer,primary_key=True, autoincrement=True, nullable=True)
+    Id = sqla.Column(sqla.Integer, primary_key=True, autoincrement=True, nullable=True)
     RegionId = sqla.Column(sqla.Integer)
     DateStamp = sqla.Column(sqla.DateTime)
     GenerationTypeId = sqla.Column(sqla.Integer)
@@ -68,4 +69,3 @@ class ElectricityGeneration(sql_alchemy_base):
         sqla.ForeignKeyConstraint(['GenerationTypeId'], ['ElectricityGenerationTypes.Id']),
         sqla.UniqueConstraint('RegionId', 'GenerationTypeId', 'DateStamp', name='UX_ElectricityGeneration'),
     )
-
