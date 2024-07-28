@@ -64,6 +64,7 @@ class ElectricityGeneration(sql_alchemy_base):
     DateStamp = sqla.Column(sqla.DateTime)
     GenerationTypeId = sqla.Column(sqla.Integer)
     AggregatedGeneration = sqla.Column(sqla.Float)
+    GenerationTypeMappingId = sqla.Column(sqla.Integer)
     __table_args__ = (
         sqla.ForeignKeyConstraint(['RegionId'], ['Regions.Id']),
         sqla.ForeignKeyConstraint(['GenerationTypeId'], ['ElectricityGenerationTypes.Id']),
