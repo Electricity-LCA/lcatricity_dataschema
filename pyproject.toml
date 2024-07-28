@@ -1,6 +1,6 @@
 [project]
 name = "lcatricity_dataschema"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
   { name="LCAtricity", email="author@example.com" },
 ]
@@ -15,3 +15,4 @@ classifiers = [
 
 [tool.setuptools]
 py-modules=["lcatricity_dataschema"]
+packages=["lcatricity_dataschema"]
